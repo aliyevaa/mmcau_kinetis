@@ -113,25 +113,5 @@ void mmcau_aes_set_key(unsigned int key[], int key_size, unsigned int key_sch[])
 void mmcau_aes_encrypt(unsigned int in[], unsigned int key_sch[], int nr, unsigned int out[]);
 void mmcau_aes_decrypt(unsigned int in[], unsigned int key_sch[], int nr, unsigned int out[]);
 
-/* DES declarations */
-int mmcau_des_chk_parity(unsigned int key[]);
-void mmcau_des_encrypt(unsigned int in[], unsigned int key[],unsigned int out[]);
-void mmcau_des_decrypt(unsigned int in[], unsigned int key[],unsigned int out[]);
 
-/* MD5 declarations */
-void mmcau_md5_initialize_output(unsigned int md_state[]);
-void mmcau_md5_hash_n(unsigned int msg_data[], int num_blks,unsigned int md_state[]);
-void mmcau_md5_update(unsigned int msg_data[], int num_blks,unsigned int md_state[]);
-void mmcau_md5_hash(unsigned int msg_data[], unsigned int md_state[]);
-
-/* SHA1 declarations */
-void mmcau_sha1_initialize_output (unsigned int sha1_state[]);
-void mmcau_sha1_hash_n (unsigned int msg_data[], int num_blks, unsigned int sha1_state[]);
-void mmcau_sha1_update(unsigned int msg_data[], int num_blks, unsigned int sha1_state[]);
-void mmcau_sha1_hash (unsigned int msg_data[], unsigned int sha1_state[]);
-
-/* SHA256 declarations */
-int mmcau_sha256_initialize_output (unsigned int *output);
-void mmcau_sha256_hash_n (unsigned int input[], int num_blks, unsigned int output[]);
-void mmcau_sha256_update (unsigned int input[], int num_blks, unsigned int output[]);
-void mmcau_sha256_hash (unsigned int input[], unsigned int output[]);
+//do we need hashes?
