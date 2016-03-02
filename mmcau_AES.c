@@ -173,24 +173,6 @@ void mmcau_aes_set_key(unsigned int key[], int key_size, unsigned int key_sch[])
     }
 }
 
-/********************************************************************************/
-/********************************************************************************/
-/**/
-/* AES: Encrypts a single 16-byte block*/
-/*   arguments*/
-/*           *in         pointer to 16-byte block of input plaintext*/
-/*           *key_sch    pointer to key schedule (44, 52, 60 longwords)*/
-/*           nr          number of AES rounds (10, 12, 14 = f(key_schedule))*/
-/*           *out        pointer to 16-byte block of output ciphertext*/
-/**/
-/*   NOTE    Input and output blocks may overlap*/
-/**/
-/*   calling convention*/
-/*   int     mmcau_aes_encrypt (const unsigned char *in,*/
-/*                              const unsigned char *key_sch,*/
-/*                              const int            nr,*/
-/*                              unsigned char       *out)*/
-
 void mmcau_aes_encrypt(unsigned int in[], unsigned int key_sch[], int nr,
                        unsigned int out[])
 {
@@ -233,23 +215,6 @@ void mmcau_aes_encrypt(unsigned int in[], unsigned int key_sch[], int nr,
     out[3] = byterev(*(MMCAU_PPB_INDIRECT + (STR+CA3))); /* store 4th 4 bytes*/
 }
 
-/********************************************************************************/
-/********************************************************************************/
-/**/
-/* AES: Decrypts a single 16-byte block*/
-/*   arguments*/
-/*           *in         pointer to 16-byte block of input chiphertext*/
-/*           *key_sch    pointer to key schedule (44, 52, 60 longwords)*/
-/*           nr          number of AES rounds (10, 12, 14 = f(key_schedule))*/
-/*           *out        pointer to 16-byte block of output plaintext*/
-/**/
-/*   NOTE    Input and output blocks may overlap*/
-/**/
-/*   calling convention*/
-/*   int     mmcau_aes_decrypt (const unsigned char *in,*/
-/*                              const unsigned char *key_sch,*/
-/*                              const int            nr,*/
-/*                              unsigned char       *out)*/
 
 void mmcau_aes_decrypt(unsigned int in[], unsigned int key_sch[], int nr,
                        unsigned int out[])
